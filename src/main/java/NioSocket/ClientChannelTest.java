@@ -1,3 +1,5 @@
+package NioSocket;
+
 import java.net.InetSocketAddress;
 import java.nio.channels.SelectionKey;
 import java.nio.channels.Selector;
@@ -6,9 +8,9 @@ import java.util.Iterator;
 import java.util.concurrent.TimeUnit;
 
 /**
- * @Author zhl
+ * @Author HomeWellGo
  * @Date 2020/3/19 16:44
- * @Description
+ * @Description 客户端
  */
 public class ClientChannelTest {
 

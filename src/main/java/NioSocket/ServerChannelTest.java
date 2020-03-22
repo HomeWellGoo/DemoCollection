@@ -1,3 +1,5 @@
+package NioSocket;
+
 import java.io.IOException;
 import java.net.InetSocketAddress;
 import java.nio.ByteBuffer;
@@ -12,9 +14,9 @@ import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
 /**
- * @Author zhl
+ * @Author HomeWellGo
  * @Date 2020/3/19 16:01
- * @Description
+ * @Description 服务端
  */
 public class ServerChannelTest {
 
