@@ -1,4 +1,4 @@
-package NioSocket;
+package NioSocketChannel;
 
 import java.net.InetSocketAddress;
 import java.nio.channels.SelectionKey;
