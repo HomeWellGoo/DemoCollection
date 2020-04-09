@@ -139,8 +139,6 @@ public class AsynchronousFileChannelTest {
 
                     Future<Integer> read = sourceChannel.read(buffer, position);
 
-                    while (!read.isDone());
-
                     int len = read.get();
 
                     if(len<1){
@@ -153,7 +151,7 @@ public class AsynchronousFileChannelTest {
                     Future<Integer> write =targetChannel.write(buffer, position);
 
                     currentNum+=5;
-
+                    //等待写入完成
                     while (!write.isDone());
 
                 } catch (InterruptedException e) {
@@ -408,8 +406,6 @@ class FutureCopyFile{
                 buffer.clear();
                 //使用Future来接收结果
                 Future<Integer> read = channel1.read(buffer, position);
-                //通过Future的isDone方法判断数据是否返回
-                while (!read.isDone());
                 //判断数据的长度
                 int len = read.get();
 
@@ -418,10 +414,10 @@ class FutureCopyFile{
                 buffer.flip();
                 //将buffer中的数据写入文件
                 Future<Integer> write = channel2.write(buffer, position);
-                //直到写入完成才进入下一次读写
-                while (!write.isDone());
                 //对读写位置做更改
                 position+=len;
+                //等待写入完成
+                while (!write.isDone());
 
             }
 
